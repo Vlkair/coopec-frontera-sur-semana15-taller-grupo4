@@ -1,0 +1,40 @@
+name: peti-s15-grupo4
+services:
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_ROOT_PASSWORD: ${SR_SETUP_PASSWORD:?Configure SR_SETUP_PASSWORD en .env}
+    command: --sql-mode=
+    volumes:
+      - db_datos:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "healthcheck.sh --connect --innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  simplerisk:
+    image: simplerisk/simplerisk-minimal:latest
+    environment:
+      DB_SETUP: automatic
+      DB_SETUP_PASS: ${SR_SETUP_PASSWORD}
+      DB_SETUP_WAIT: "5"
+      SIMPLERISK_DB_HOSTNAME: db
+      SIMPLERISK_DB_DATABASE: simplerisk
+      SIMPLERISK_DB_USERNAME: simplerisk
+      SIMPLERISK_DB_PASSWORD: ${SR_DB_PASSWORD:?Configure SR_DB_PASSWORD en .env}
+      ADMIN_USERNAME: grupo4
+      ADMIN_PASSWORD: ${SR_ADMIN_PASSWORD:?Configure SR_ADMIN_PASSWORD en .env}
+      ADMIN_EMAIL: grupo4@example.invalid
+      ADMIN_NAME: Laboratorio Grupo 4
+    ports:
+      - "127.0.0.1:8084:80"
+    volumes:
+      - sr_config:/var/www/simplerisk/includes
+      - sr_uploads:/var/www/simplerisk/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  db_datos:
+  sr_config:
+  sr_uploads:
