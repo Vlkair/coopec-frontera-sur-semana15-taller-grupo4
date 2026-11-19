@@ -25,7 +25,7 @@ RG03 contiene 14 valoraciones. Críticos: R-02, R-04, R-05, R-07, R-08, R-11. Ca
 
 ## 8.5 Tratamiento y riesgo residual
 
-RG04 cubre todos los riesgos >6. Índice ordinal agregado 190 a 104; reducción objetivo de 86 puntos (45.3%). No es reducción lograda: depende de ejecutar y probar los controles. Los costos son asignaciones referenciales que deben conciliarse con el TCO S13.
+RG04 cubre todos los riesgos >6. Índice ordinal agregado 190 a 102; reducción objetivo de 88 puntos (46.3%). No es reducción lograda: depende de ejecutar y probar los controles. Decisiones: mitigar en la mayoría; transferir + mitigar en R-06 (contrato con penalidad); contingencia en R-01, R-11 y R-12; vigilancia normativa en R-09. Los costos son asignaciones referenciales que deben conciliarse con el TCO S13.
 
 
 ## 8.6 Señales tempranas y umbrales
@@ -35,7 +35,7 @@ Cada riesgo tiene una señal observable y umbral: aprobación de partida, actas,
 
 ## 8.7 Matriz de comunicación
 
-RG06 define ocho columnas: ID, qué, a quién, cuándo, canal, quién comunica, formato y decisión. Incluye una fila de escalamiento antes de aprobar el plan para críticos y residuales >6. Solo se diseña el flujo: no se enviaron mensajes a terceros.
+RG06 define ocho columnas: ID, qué, a quién, cuándo, canal, quién comunica, formato y decisión. Cada fila es específica del riesgo: comunica su indicador, a su decisor y con su propio ritmo (semanal en pilotos, quincenal en la negociación contractual, trimestral en gobierno y presupuesto). Incluye una fila de escalamiento antes de aprobar el plan para críticos y residuales >6. Solo se diseña el flujo: no se enviaron mensajes a terceros.
 
 
 ## 8.8 Aceptación formal
@@ -74,7 +74,7 @@ Responsable propuesto: dueño por cargo y responsable PETI. Revisar trimestralme
 
 | R-10 | De alcance | 3 | 3 | 9 | 6 |
 
-| R-11 | Patrocinio | 4 | 5 | 20 | 10 |
+| R-11 | Patrocinio | 4 | 5 | 20 | 8 |
 
 | R-12 | Presupuestal | 3 | 4 | 12 | 8 |
 
