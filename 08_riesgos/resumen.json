@@ -287,8 +287,8 @@
     {
       "id": "R-06",
       "Valor": 12,
-      "Decisión": "Mitigar con contingencia",
-      "Acciones": "Confirmar contrato e interfaces antes del hito de compra; prueba de interoperabilidad y cláusulas de soporte, exportación y salida.",
+      "Decisión": "Transferir + Mitigar",
+      "Acciones": "Firmar contrato con niveles de servicio, penalidad por incumplimiento, derecho de auditoría y cláusula de exportación y salida (transfiere al proveedor el costo del incumplimiento); prueba de interoperabilidad y documentación de interfaces antes del hito de compra.",
       "Responsable": "Administración y Jefatura TI",
       "Plazo": "60 días antes del inicio de PR-09",
       "Costo_estimado_PEN": 6000,
@@ -347,7 +347,7 @@
     {
       "id": "R-09",
       "Valor": 12,
-      "Decisión": "Mitigar",
+      "Decisión": "Mitigar con vigilancia",
       "Acciones": "Cumplimiento valida alcance, plazos y evidencia aplicable con fuente oficial; revisión trimestral y ante cambios; actualizar criterios de aceptación.",
       "Responsable": "Cumplimiento y Riesgos",
       "Plazo": "Antes de aprobar alcance PR-03 y cada trimestre",
@@ -387,22 +387,22 @@
     {
       "id": "R-11",
       "Valor": 20,
-      "Decisión": "Mitigar",
-      "Acciones": "Condicionar aprobación a responsable formal, calendario de seguimiento y tablero; primera sesión con acta y revisión de hitos.",
+      "Decisión": "Mitigar con contingencia",
+      "Acciones": "Condicionar la aprobación a un responsable formal, calendario de seguimiento y tablero; primera sesión con acta. Contingencia: incorporar el núcleo habilitador (PR-02, PR-03 y PR-04) al plan operativo y al presupuesto anual, para que un archivo del PETI no detenga seguridad y continuidad.",
       "Responsable": "Gerencia General",
       "Plazo": "En el acto de aprobación",
       "Costo_estimado_PEN": 3000,
       "Origen_costo": "Asignación de trabajo referencial; validar dentro del TCO S13, no sumar automáticamente",
       "P_residual": 2,
-      "I_residual": 5,
-      "Valor_residual": 10,
-      "Supuesto_residual": "Objetivo si tratamiento implantado y probado; sin efectividad demostrada",
+      "I_residual": 4,
+      "Valor_residual": 8,
+      "Supuesto_residual": "Objetivo si tratamiento implantado y probado. I baja de 5 a 4 solo si el núcleo habilitador queda en el plan operativo anual; sin efectividad demostrada",
       "Señal_temprana": "Seguimiento no realizado",
       "Umbral_alerta": "Un trimestre sin sesión documentada o sin responsable designado",
       "Acepta": "Gerencia General",
       "Firma": "PENDIENTE",
-      "Reduccion_objetivo": 10,
-      "Reduccion_pct": 50.0
+      "Reduccion_objetivo": 12,
+      "Reduccion_pct": 60.0
     },
     {
       "id": "R-12",
@@ -468,153 +468,153 @@
   "comunicacion": [
     {
       "id_riesgo": "R-01",
-      "Qué_se_comunica": "R-01: avance del tratamiento, ola próxima sin partida aprobada, residual objetivo y evidencia",
-      "A_quién": "Gerencia General",
-      "Cuándo": "Mensual y al alcanzar el umbral; trimestral al comité",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
+      "Qué_se_comunica": "Aprobación de la partida de la próxima ola y ejecución presupuestal frente a lo planificado",
+      "A_quién": "Gerencia General y Consejo de Administración",
+      "Cuándo": "Trimestral y 30 días antes de iniciar cada ola",
+      "Canal": "Informe escrito al Consejo",
       "Quién_comunica": "Gerencia de Administración y Finanzas",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Formato": "Reporte de 1 página con escenario reducido",
+      "Decisión": "Aprobar la ola, activar el escenario reducido o postergar"
     },
     {
       "id_riesgo": "R-02",
-      "Qué_se_comunica": "R-02: avance del tratamiento, sesiones sin decisión registrada, residual objetivo y evidencia",
-      "A_quién": "Gerencia General",
-      "Cuándo": "Mensual y al alcanzar el umbral; trimestral al comité",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
-      "Quién_comunica": "Gerencia General",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Qué_se_comunica": "Asistencia del patrocinador y decisiones registradas en las actas del comité",
+      "A_quién": "Consejo de Administración",
+      "Cuándo": "Trimestral; inmediato tras dos sesiones sin acta",
+      "Canal": "Sesión del Consejo",
+      "Quién_comunica": "Responsable del PETI",
+      "Formato": "Resumen de actas y decisiones pendientes",
+      "Decisión": "Ratificar el patrocinio o designar suplente"
     },
     {
       "id_riesgo": "R-03",
-      "Qué_se_comunica": "R-03: avance del tratamiento, entregable crítico sin suplente probado, residual objetivo y evidencia",
-      "A_quién": "Jefatura de TI",
-      "Cuándo": "Mensual y al alcanzar el umbral; trimestral al comité",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
+      "Qué_se_comunica": "Entregables habilitadores con y sin suplente probado",
+      "A_quién": "Gerencia General y Recursos Humanos",
+      "Cuándo": "Mensual hasta que todos tengan suplente probado",
+      "Canal": "Correo con tablero",
       "Quién_comunica": "Jefatura de TI",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Formato": "Indicador de factor bus por entregable",
+      "Decisión": "Priorizar formación, contratación o reprogramar"
     },
     {
       "id_riesgo": "R-04",
-      "Qué_se_comunica": "R-04: avance del tratamiento, sobrecarga y hitos abiertos, residual objetivo y evidencia",
+      "Qué_se_comunica": "Carga semanal del área de TI, proyectos en paralelo y desvío de hitos",
       "A_quién": "Comité de TI",
-      "Cuándo": "Mensual y al alcanzar el umbral; trimestral al comité",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
-      "Quién_comunica": "Responsable del PETI y Jefatura TI",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Cuándo": "Mensual; alerta al superar dos proyectos simultáneos o 20 % de desvío",
+      "Canal": "Sesión de comité",
+      "Quién_comunica": "Responsable del PETI",
+      "Formato": "Tablero de capacidad",
+      "Decisión": "Reprogramar la ola o contratar apoyo por entregable"
     },
     {
       "id_riesgo": "R-05",
-      "Qué_se_comunica": "R-05: avance del tratamiento, activación y participación bajas, residual objetivo y evidencia",
-      "A_quién": "Gerencia General",
-      "Cuándo": "Mensual y al alcanzar el umbral; semanal durante piloto",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
-      "Quién_comunica": "Dueños funcionales y Jefatura TI",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Qué_se_comunica": "Activación del segundo factor y uso de los controles por agencia en el piloto",
+      "A_quién": "Gerencia General y jefaturas de agencia",
+      "Cuándo": "Semanal durante el piloto; mensual después",
+      "Canal": "Reunión de seguimiento del piloto",
+      "Quién_comunica": "Jefatura de TI con dueños funcionales",
+      "Formato": "Tablero de activación por agencia",
+      "Decisión": "Ampliar el despliegue, reforzar la capacitación o ajustar el diseño"
     },
     {
       "id_riesgo": "R-06",
-      "Qué_se_comunica": "R-06: avance del tratamiento, contrato o acceso a interfaces sin confirmar, residual objetivo y evidencia",
+      "Qué_se_comunica": "Estado del contrato, niveles de servicio, penalidades e interfaces del proveedor",
       "A_quién": "Gerencia General",
-      "Cuándo": "Mensual y al alcanzar el umbral; trimestral al comité",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
-      "Quién_comunica": "Administración y Jefatura TI",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Cuándo": "Quincenal desde 90 días antes de PR-09 hasta la firma",
+      "Canal": "Correo con estado del contrato",
+      "Quién_comunica": "Gerencia de Administración y Finanzas",
+      "Formato": "Estado en una línea con hitos contractuales",
+      "Decisión": "Firmar, escalar la negociación o activar el plan de salida"
     },
     {
       "id_riesgo": "R-07",
-      "Qué_se_comunica": "R-07: avance del tratamiento, pruebas de autorización fallidas, residual objetivo y evidencia",
-      "A_quién": "Gerencia General",
-      "Cuándo": "Mensual y al alcanzar el umbral; semanal durante piloto",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
-      "Quién_comunica": "Jefatura TI y Gerencia de Créditos",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Qué_se_comunica": "Resultado de las pruebas de permisos y auditoría de lectura de expedientes",
+      "A_quién": "Gerencia de Créditos y Comité de TI",
+      "Cuándo": "Al concluir cada prueba; semanal durante la migración",
+      "Canal": "Sesión de comité",
+      "Quién_comunica": "Jefatura de TI",
+      "Formato": "Informe técnico con lecturas no trazadas",
+      "Decisión": "Aprobar la migración de PR-01 o repetir las pruebas"
     },
     {
       "id_riesgo": "R-08",
-      "Qué_se_comunica": "R-08: avance del tratamiento, meta sin prueba o copia incapaz de cubrir pérdida admisible, residual objetivo y evidencia",
-      "A_quién": "Gerencia General",
-      "Cuándo": "Mensual y al alcanzar el umbral; trimestral al comité",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
-      "Quién_comunica": "Jefatura TI y dueños de procesos",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Qué_se_comunica": "BIA validado y RTO/RPO medidos en las pruebas de restauración frente a la meta",
+      "A_quién": "Dueños de proceso y Gerencia General",
+      "Cuándo": "Tras cada prueba y antes de aceptar PR-02",
+      "Canal": "Sesión de comité",
+      "Quién_comunica": "Jefatura de TI",
+      "Formato": "Informe técnico por proceso",
+      "Decisión": "Aprobar las metas RTO/RPO o rediseñar PR-02"
     },
     {
       "id_riesgo": "R-09",
-      "Qué_se_comunica": "R-09: avance del tratamiento, requisito aplicable sin trazabilidad, residual objetivo y evidencia",
-      "A_quién": "Gerencia General",
-      "Cuándo": "Mensual y al alcanzar el umbral; trimestral al comité",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
+      "Qué_se_comunica": "Obligaciones aplicables de la Res. SBS 504-2021 y brechas sin proyecto ni responsable",
+      "A_quién": "Gerencia General y Comité de TI",
+      "Cuándo": "Trimestral y ante cualquier cambio normativo",
+      "Canal": "Informe escrito",
       "Quién_comunica": "Cumplimiento y Riesgos",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Formato": "Matriz normativa de brechas",
+      "Decisión": "Ajustar el alcance de PR-03 o asignar responsable"
     },
     {
       "id_riesgo": "R-10",
-      "Qué_se_comunica": "R-10: avance del tratamiento, proyecto o entregable no registrado, residual objetivo y evidencia",
-      "A_quién": "Comité de TI",
-      "Cuándo": "Mensual y al alcanzar el umbral; trimestral al comité",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
-      "Quién_comunica": "Comité de TI",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Qué_se_comunica": "Pedidos nuevos recibidos y su decisión de admisión",
+      "A_quién": "Comité de TI y áreas solicitantes",
+      "Cuándo": "En cada pedido nuevo; resumen trimestral",
+      "Canal": "Sesión de comité",
+      "Quién_comunica": "Responsable del PETI",
+      "Formato": "Registro de cambios con caso de negocio",
+      "Decisión": "Admitir, postergar o rechazar el pedido"
     },
     {
       "id_riesgo": "R-11",
-      "Qué_se_comunica": "R-11: avance del tratamiento, seguimiento no realizado, residual objetivo y evidencia",
-      "A_quién": "Gerencia General",
-      "Cuándo": "Mensual y al alcanzar el umbral; trimestral al comité",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
-      "Quién_comunica": "Gerencia General",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Qué_se_comunica": "Estado de ejecución del PETI y avance de indicadores",
+      "A_quién": "Gerencia General y Consejo de Administración",
+      "Cuándo": "Trimestral",
+      "Canal": "Sesión de comité con acta elevada al Consejo",
+      "Quién_comunica": "Responsable del PETI",
+      "Formato": "Tablero de indicadores y acta",
+      "Decisión": "Continuar, ajustar o detener el plan"
     },
     {
       "id_riesgo": "R-12",
-      "Qué_se_comunica": "R-12: avance del tratamiento, opex previsto sin partida, residual objetivo y evidencia",
-      "A_quién": "Gerencia General",
-      "Cuándo": "Mensual y al alcanzar el umbral; trimestral al comité",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
-      "Quién_comunica": "Administración y Finanzas",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Qué_se_comunica": "Cobertura del OPEX anual de los servicios ya entregados",
+      "A_quién": "Gerencia General y Gerencia de Administración y Finanzas",
+      "Cuándo": "Al formular el presupuesto anual y antes de cada compra",
+      "Canal": "Informe escrito",
+      "Quién_comunica": "Gerencia de Administración y Finanzas",
+      "Formato": "Proyección de OPEX por año",
+      "Decisión": "Aprobar la compra, reducir el alcance o buscar financiación"
     },
     {
       "id_riesgo": "R-13",
-      "Qué_se_comunica": "R-13: avance del tratamiento, fecha del bia sin evidencia recuperable, residual objetivo y evidencia",
-      "A_quién": "Comité de TI",
-      "Cuándo": "Mensual y al alcanzar el umbral; trimestral al comité",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
-      "Quién_comunica": "Dueños de procesos y Jefatura TI",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Qué_se_comunica": "Actas de prueba del BIA conciliadas y fechas no acreditadas",
+      "A_quién": "Comité de TI y dueños de proceso",
+      "Cuándo": "Mensual hasta conciliar; luego en cada prueba",
+      "Canal": "Correo con matriz de conciliación",
+      "Quién_comunica": "Jefatura de TI",
+      "Formato": "Matriz de conciliación del BIA",
+      "Decisión": "Repetir la prueba o aceptar la evidencia"
     },
     {
       "id_riesgo": "R-14",
-      "Qué_se_comunica": "R-14: avance del tratamiento, trámites piloto abandonados, residual objetivo y evidencia",
-      "A_quién": "Gerencia de Atención al Socio",
-      "Cuándo": "Mensual y al alcanzar el umbral; semanal durante piloto",
-      "Canal": "Comité con acta; alerta escrita al superar umbral",
+      "Qué_se_comunica": "Finalización de trámites del piloto de autoservicio por canal y agencia",
+      "A_quién": "Gerencia de Atención al Socio y jefaturas de agencia",
+      "Cuándo": "Semanal durante el piloto; mensual después",
+      "Canal": "Reunión de equipo",
       "Quién_comunica": "Gerencia de Atención al Socio",
-      "Formato": "Ficha de riesgo con indicador, umbral, acción y decisión",
-      "Decisión": "Escalar, reasignar recursos o detener el hito; aceptación solo con firma"
+      "Formato": "Tablero de finalización de trámites",
+      "Decisión": "Ampliar PR-08, rediseñar o mantener la atención asistida"
     },
     {
       "id_riesgo": "Todos ≥ 15 / residual > 6",
-      "Qué_se_comunica": "Riesgo inherente, acciones, residual estimado y decisión pendiente",
-      "A_quién": "Gerencia General y dueños del riesgo",
+      "Qué_se_comunica": "Riesgo inherente, acciones, residual estimado y responsable de la aceptación",
+      "A_quién": "Gerencia General, Consejo de Administración y dueños del riesgo",
       "Cuándo": "Antes de aprobar el PETI y en cada hito afectado",
       "Canal": "Sesión formal con acta",
       "Quién_comunica": "Responsable del PETI",
       "Formato": "Anexo de aceptación individual con firmas",
-      "Decisión": "Aprobar, exigir más controles o posponer; nunca aceptación tácita"
+      "Decisión": "Aprobar el plan con conocimiento del riesgo, exigir más controles o posponer; nunca aceptación tácita"
     }
   ],
   "secciones": [
@@ -636,7 +636,7 @@
     ],
     [
       "8.5 Tratamiento y riesgo residual",
-      "RG04 cubre todos los riesgos >6. Índice ordinal agregado 190 a 104; reducción objetivo de 86 puntos (45.3%). No es reducción lograda: depende de ejecutar y probar los controles. Los costos son asignaciones referenciales que deben conciliarse con el TCO S13."
+      "RG04 cubre todos los riesgos >6. Índice ordinal agregado 190 a 102; reducción objetivo de 88 puntos (46.3%). No es reducción lograda: depende de ejecutar y probar los controles. Decisiones: mitigar en la mayoría; transferir + mitigar en R-06 (contrato con penalidad); contingencia en R-01, R-11 y R-12; vigilancia normativa en R-09. Los costos son asignaciones referenciales que deben conciliarse con el TCO S13."
     ],
     [
       "8.6 Señales tempranas y umbrales",
@@ -644,7 +644,7 @@
     ],
     [
       "8.7 Matriz de comunicación",
-      "RG06 define ocho columnas: ID, qué, a quién, cuándo, canal, quién comunica, formato y decisión. Incluye una fila de escalamiento antes de aprobar el plan para críticos y residuales >6. Solo se diseña el flujo: no se enviaron mensajes a terceros."
+      "RG06 define ocho columnas: ID, qué, a quién, cuándo, canal, quién comunica, formato y decisión. Cada fila es específica del riesgo: comunica su indicador, a su decisor y con su propio ritmo (semanal en pilotos, quincenal en la negociación contractual, trimestral en gobierno y presupuesto). Incluye una fila de escalamiento antes de aprobar el plan para críticos y residuales >6. Solo se diseña el flujo: no se enviaron mensajes a terceros."
     ],
     [
       "8.8 Aceptación formal",
@@ -675,5 +675,5 @@
     "R-12"
   ],
   "inicial": 190,
-  "residual": 104
+  "residual": 102
 }
