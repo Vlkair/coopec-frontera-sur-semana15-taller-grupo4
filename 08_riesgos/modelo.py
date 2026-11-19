@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from tratamiento_comunicacion import DECISION, AJUSTE, fila_comunicacion, fila_escalamiento
 
 BASE=Path(__file__).resolve().parent
 ROOT=BASE.parent
@@ -116,20 +117,15 @@ def preparar():
         id=f'R-{i:02}'
         rows.append(dict(id=id,Categoría=cat,Riesgo=risk,Proyectos=projects,Origen=source,
             P=p,I=impact,Justificación=why,Estado='Valoración académica provisional; pendiente de validación'))
-        treat.append(dict(id=id,Valor=p*impact,Decisión='Mitigar con contingencia' if i in (1,6,12) else 'Mitigar',
-            Acciones=action,Responsable=owner,Plazo=deadline,Costo_estimado_PEN=cost,
+        aj=AJUSTE.get(id,{});ir=aj.get('I_residual',ir)
+        treat.append(dict(id=id,Valor=p*impact,Decisión=DECISION[id],
+            Acciones=aj.get('Acciones',action),Responsable=owner,Plazo=deadline,Costo_estimado_PEN=cost,
             Origen_costo='Asignación de trabajo referencial; validar dentro del TCO S13, no sumar automáticamente',
             P_residual=pr,I_residual=ir,Valor_residual=pr*ir,
-            Supuesto_residual='Objetivo si tratamiento implantado y probado; sin efectividad demostrada',
+            Supuesto_residual=aj.get('Supuesto_residual','Objetivo si tratamiento implantado y probado; sin efectividad demostrada'),
             Señal_temprana=signal,Umbral_alerta=threshold,Acepta=accept,Firma='PENDIENTE'))
-        comm.append(dict(id_riesgo=id,Qué_se_comunica=f'{id}: avance del tratamiento, '+signal.lower()+', residual objetivo y evidencia',
-            A_quién=accept,Cuándo='Mensual y al alcanzar el umbral; semanal durante piloto' if i in (5,7,14) else 'Mensual y al alcanzar el umbral; trimestral al comité',
-            Canal='Comité con acta; alerta escrita al superar umbral',Quién_comunica=owner,
-            Formato='Ficha de riesgo con indicador, umbral, acción y decisión',Decisión='Escalar, reasignar recursos o detener el hito; aceptación solo con firma'))
-    comm.append(dict(id_riesgo='Todos ≥ 15 / residual > 6',Qué_se_comunica='Riesgo inherente, acciones, residual estimado y decisión pendiente',
-        A_quién='Gerencia General y dueños del riesgo',Cuándo='Antes de aprobar el PETI y en cada hito afectado',
-        Canal='Sesión formal con acta',Quién_comunica='Responsable del PETI',
-        Formato='Anexo de aceptación individual con firmas',Decisión='Aprobar, exigir más controles o posponer; nunca aceptación tácita'))
+        comm.append(fila_comunicacion(id))
+    comm.append(fila_escalamiento())
     assert set(x['Categoría'] for x in rows)==set(CAT)
     writecsv(BASE/'RG02_registro.csv',rows);writecsv(BASE/'RG04_tratamiento.csv',treat);writecsv(BASE/'RG06_comunicacion.csv',comm)
     return rows,treat,comm
@@ -263,9 +259,9 @@ antes de firmar se debe verificar la efectividad del tratamiento.
       ('8.2 Método','Se sigue la secuencia de ISO 31000 como referencia metodológica: contexto, identificación, análisis, valoración, tratamiento, comunicación y revisión. Fuentes: política, BIA, universo auditable, ficha del caso y propuesta S13. El pre-mortem es documental propuesto y no acta de sesión.'),
       ('8.3 Registro de riesgos','RG02 incluye 14 escenarios sobre las nueve categorías y objetivos/proyectos propuestos. R-11 registra que el plan se apruebe y archive. Se conserva la diferencia entre un hecho de operación y su consecuencia para entregar un proyecto.'),
       ('8.4 Evaluación y mapa de calor','RG03 contiene '+str(len(df))+' valoraciones. Críticos: '+', '.join(crit)+'. Cada P e I tiene un fundamento, límites y carácter provisional; no hay una muestra para estimar frecuencias de planes comparables. El mapa visualiza productos ordinales, no pérdidas monetarias.'),
-      ('8.5 Tratamiento y riesgo residual',f'RG04 cubre todos los riesgos >6. Índice ordinal agregado {initial} a {target}; reducción objetivo de {initial-target} puntos ({(initial-target)/initial:.1%}). No es reducción lograda: depende de ejecutar y probar los controles. Los costos son asignaciones referenciales que deben conciliarse con el TCO S13.'),
+      ('8.5 Tratamiento y riesgo residual',f'RG04 cubre todos los riesgos >6. Índice ordinal agregado {initial} a {target}; reducción objetivo de {initial-target} puntos ({(initial-target)/initial:.1%}). No es reducción lograda: depende de ejecutar y probar los controles. Decisiones: mitigar en la mayoría; transferir + mitigar en R-06 (contrato con penalidad); contingencia en R-01, R-11 y R-12; vigilancia normativa en R-09. Los costos son asignaciones referenciales que deben conciliarse con el TCO S13.'),
       ('8.6 Señales tempranas y umbrales','Cada riesgo tiene una señal observable y umbral: aprobación de partida, actas, suplencia, carga, activación, interfaces, pruebas y adopción. Cero registros sin señal ni umbral. Los umbrales son propuestas para aprobación, no tolerancias legales.'),
-      ('8.7 Matriz de comunicación','RG06 define ocho columnas: ID, qué, a quién, cuándo, canal, quién comunica, formato y decisión. Incluye una fila de escalamiento antes de aprobar el plan para críticos y residuales >6. Solo se diseña el flujo: no se enviaron mensajes a terceros.'),
+      ('8.7 Matriz de comunicación','RG06 define ocho columnas: ID, qué, a quién, cuándo, canal, quién comunica, formato y decisión. Cada fila es específica del riesgo: comunica su indicador, a su decisor y con su propio ritmo (semanal en pilotos, quincenal en la negociación contractual, trimestral en gobierno y presupuesto). Incluye una fila de escalamiento antes de aprobar el plan para críticos y residuales >6. Solo se diseña el flujo: no se enviaron mensajes a terceros.'),
       ('8.8 Aceptación formal','Residuales objetivo >6: '+', '.join(high)+'. Todos tienen cargo de aceptación; firmas obtenidas: cero. Los ≤6 también requieren documentación y firma antes de calificarse como aceptados. El anexo F deja el formato sin firma para la sección 9.'),
       ('8.9 Seguimiento y revisión','Responsable propuesto: dueño por cargo y responsable PETI. Revisar trimestralmente, mensualmente para residuales >6, semanalmente en pilotos según RG06 y extraordinariamente ante umbral. Revisar vigencia del BIA y consistencia de pruebas antes de aceptar PR-02.'),
     ]
