@@ -1,0 +1,12 @@
+﻿id,proceso,Hallazgo,Acción
+BIA01,Captación de ahorros,Sin fecha de última prueba,Programar prueba y conservar acta; ausencia de fecha no demuestra ausencia de copia
+BIA02,Evaluación y otorgamiento de créditos,Fecha indicada sin acta entregada; política declara falta de pruebas trimestrales,Solicitar acta y resultado; marcar prueba no acreditada hasta verificar
+BIA02,Evaluación y otorgamiento de créditos,Criticidad alta e impacto a 24 h bajo con RTO 72 h,"Revalidar con dueño; posible horizonte de impacto distinto, no corregir arbitrariamente"
+BIA03,Recuperaciones y cobranza,Sin fecha de última prueba,Programar prueba y conservar acta; ausencia de fecha no demuestra ausencia de copia
+BIA03,Recuperaciones y cobranza,RPO 4 h frente a copia incremental diaria declarada,Medir pérdida máxima y frecuencia efectiva; una copia cada 24 h no acredita un RPO menor sin mecanismos adicionales
+BIA04,Prevención de lavado de activos,Fecha indicada sin acta entregada; política declara falta de pruebas trimestrales,Solicitar acta y resultado; marcar prueba no acreditada hasta verificar
+BIA05,Atención al socio en agencias,Fecha indicada sin acta entregada; política declara falta de pruebas trimestrales,Solicitar acta y resultado; marcar prueba no acreditada hasta verificar
+BIA05,Atención al socio en agencias,RPO 4 h frente a copia incremental diaria declarada,Medir pérdida máxima y frecuencia efectiva; una copia cada 24 h no acredita un RPO menor sin mecanismos adicionales
+BIA06,Cierre contable y reportes a la SBS,Sin fecha de última prueba,Programar prueba y conservar acta; ausencia de fecha no demuestra ausencia de copia
+BIA06,Cierre contable y reportes a la SBS,RPO 1 h frente a copia incremental diaria declarada,Medir pérdida máxima y frecuencia efectiva; una copia cada 24 h no acredita un RPO menor sin mecanismos adicionales
+BIA06,Cierre contable y reportes a la SBS,Criticidad media con impacto a 24 h alto,Revisar criterio de criticidad y ventanas de reporte; no suponer plazo legal

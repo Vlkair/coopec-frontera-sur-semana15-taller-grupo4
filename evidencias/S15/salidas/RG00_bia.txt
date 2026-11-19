@@ -1,0 +1,13 @@
+BIA: 6 procesos, 3 fechas ausentes, 3 fechas sin actas entregadas. BIA sin aprobación.
+RPO de 1 o 4 h no acreditado por respaldo diario. RPO > RTO no es por sí solo una contradicción.
+BIA01 Sin fecha de última prueba
+BIA02 Fecha indicada sin acta entregada; política declara falta de pruebas trimestrales
+BIA02 Criticidad alta e impacto a 24 h bajo con RTO 72 h
+BIA03 Sin fecha de última prueba
+BIA03 RPO 4 h frente a copia incremental diaria declarada
+BIA04 Fecha indicada sin acta entregada; política declara falta de pruebas trimestrales
+BIA05 Fecha indicada sin acta entregada; política declara falta de pruebas trimestrales
+BIA05 RPO 4 h frente a copia incremental diaria declarada
+BIA06 Sin fecha de última prueba
+BIA06 RPO 1 h frente a copia incremental diaria declarada
+BIA06 Criticidad media con impacto a 24 h alto

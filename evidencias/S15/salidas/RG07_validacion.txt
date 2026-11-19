@@ -1,0 +1,9 @@
+VALIDACIÓN DEL ESCENARIO
+1. 14 riesgos con evento, causa, consecuencia y proyectos propuestos vinculados.
+2. 9/9 categorías cubiertas. Riesgo de archivo del plan incluido en Patrocinio.
+3. 14/14 filas con justificación explícita P/I; todas provisionales. P requiere validación, no es frecuencia medida.
+4. Todo valor >6 tiene acciones, cargo, plazo, costo, señal, umbral y residual objetivo.
+5. Todos los cálculos P×I y P residual×I residual verificados; no hay IDs duplicados o faltantes.
+6. Matriz de comunicación: 8 columnas, 14 riesgos y una regla de escalamiento.
+7. Criterios versionados en commit anterior a la ejecución; no equivale a acuerdo gerencial.
+8. Firmas reales de aceptación: 0. Pre-mortem propuesto, no sesión realizada.
